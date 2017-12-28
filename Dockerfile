@@ -1,5 +1,4 @@
 FROM debian:jessie
-USER root
 
 # add webupd8 repository
 RUN \
@@ -57,8 +56,6 @@ WORKDIR /bdd
 RUN webdriver-manager update
 
 COPY run.sh /
+RUN ["chmod", "+x", "/run.sh"]
 
 ENTRYPOINT [ "/run.sh" ]
-
-# Start webdriver-manager when docker run
-#CMD ["sh", "-c", "webdriver-manager start --detach --seleniumPort=80 && xvfb-run -a --server-args='-screen 0 1280x1024x24' protractor $@" ]
