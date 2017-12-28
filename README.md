@@ -4,6 +4,12 @@
 
 	Based on Debian Jessie, created to attend CI.
 
+*PreRequisites*
+	
+	To use this Docker, need to install:
+	
+	- Docker (https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#set-up-the-repository)
+
 Installed Packages
 
 	- NodeJS
@@ -15,4 +21,9 @@ Installed Packages
 
 How to use:
 
-	$ docker run --rm -v /path/to/bdd/folder:/bdd bdd-ci:latest protractor.conf.js
+	$ docker run --rm -v /path/to/bdd/folder:/bdd bdd-ci:latest protractor.conf.js <args>
+
+	For args, you can use to override default values in protractor.conf.js:
+	--cucumberOpts.tags (to change tags that will run tests, without changing protractor.conf.js)
+	--walnutjsOpts.parametersPath (to change env parameters)
+	
