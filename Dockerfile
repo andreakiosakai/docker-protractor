@@ -56,6 +56,5 @@ WORKDIR /bdd
 RUN webdriver-manager update
 
 COPY run.sh /
-RUN ["chmod", "+x", "/run.sh"]
 
 ENTRYPOINT [ "/run.sh" ]
