@@ -21,7 +21,9 @@ Installed Packages
 
 How to use:
 
-	$ docker run --rm -v /path/to/bdd/folder:/bdd bdd-ci:latest protractor.conf.js <args>
+	$ docker run --rm -v /path/to/bdd/folder:/bdd bdd-ci:<tag> protractor.conf.js <args>
+	
+	<tag> : check the tags to use the most appropriate
 
 	For args, you can use to override default values in protractor.conf.js:
 	--cucumberOpts.tags (to change tags that will run tests, without changing protractor.conf.js)
