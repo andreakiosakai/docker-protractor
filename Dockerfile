@@ -16,7 +16,7 @@ RUN \
 
 # nvm environment variables
 ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 6.9.4
+ENV NODE_VERSION 8.4.0
 
 # install nvm
 RUN curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | sh
