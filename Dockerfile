@@ -7,9 +7,9 @@ RUN \
     echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" | tee -a /etc/apt/sources.list.d/webupd8team-java.list  && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886  && \
     apt-get update  && \
-    apt-get install -y curl xvfb unzip && \
+    apt-get install -y curl xvfb unzip git && \
     \
-    echo "===> install Java"  && \
+    echo "===> installing Java"  && \
     echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections  && \
     echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections  && \
     DEBIAN_FRONTEND=noninteractive  apt-get install -y --force-yes oracle-java8-installer oracle-java8-set-default
@@ -22,7 +22,8 @@ ENV NODE_VERSION 8.4.0
 RUN curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | sh
 
 # install node and npm
-RUN . $NVM_DIR/nvm.sh \
+RUN echo "===> installing Node" && \
+    . $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION \
     && nvm alias default $NODE_VERSION \
     && nvm use default
@@ -32,11 +33,13 @@ ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
 # install webdriver-manager and protractor
-RUN npm install -g webdriver-manager && \
+RUN echo "===> installling WebDriver-Manager and protractor" && \
+    npm install -g webdriver-manager && \
     npm install -g protractor
 
 #install chrome stable
-RUN curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
+RUN echo "===> installing chrome" && \
+    curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
     echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list && \
     apt-get -yqq update && \
     apt-get -yqq install google-chrome-stable && \
@@ -51,9 +54,6 @@ RUN echo "===> clean up..."  && \
 
 # Setting working directory
 WORKDIR /bdd
-
-# Update webdriver-manager server
-RUN webdriver-manager update
 
 COPY run.sh /
 
