@@ -18,6 +18,10 @@ Installed Packages
 	- Webdriver-manager
 	- ChromeDriver
 	- Geckodriver
+	
+To check if docker build is successful:
+	
+	docker run -it --entrypoint "/bin/bash" bdd-ci:latest
 
 How to use:
 
