@@ -1,4 +1,3 @@
-**In construction**
 
 **Docker BDD CI**
 
@@ -10,7 +9,13 @@
 	
 	- Docker (https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#set-up-the-repository)
 
-Installed Packages
+	Run command to download image:
+	
+	docker pull gfgit/bdd-ci:<tag>
+
+	check the latest tag (not the latest but a version number, ex.: 0.0.1)
+
+*Installed Packages*
 
 	- NodeJS
 	- Java JDK 8
@@ -19,11 +24,11 @@ Installed Packages
 	- ChromeDriver
 	- Geckodriver
 	
-To check if docker build is successful:
+*To check if docker build is successful:*
 	
 	docker run -it --entrypoint "/bin/bash" bdd-ci:latest
 
-How to use:
+*How to use:*
 
 	Run this command inside your bdd project folder:
 	
