@@ -1,7 +1,7 @@
 
 **Docker BDD CI**
 
-	Based on Debian Jessie, created to attend CI.
+	Based on Debian Jessie, created to attend CI tests, using NodeJS, Webdriver-manager and Prodtractor.
 
 *PreRequisites*
 	
@@ -32,7 +32,7 @@
 
 	Run this command inside your bdd project folder:
 	
-	$ docker run --rm -v $(pwd):/bdd bdd-ci:<tag> protractor.conf.js <args>
+	$ docker run --rm -v $(pwd):/bdd gfgit/bdd-ci:<tag> protractor.conf.js <args>
 	
 	<tag> : check the tags to use the most appropriate
 
