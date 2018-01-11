@@ -40,3 +40,6 @@
 	--cucumberOpts.tags (to change tags that will run tests, without changing protractor.conf.js)
 	--walnutjsOpts.parametersPath (to change env parameters)
 	
+	To run web pages, you need to change selenium address from: seleniumAddress: 'http://localhost:4444/wd/hub'
+	to:
+	seleniumAddress: 'http://<dockerip>:4444/wd/hub'
