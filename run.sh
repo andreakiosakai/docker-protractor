@@ -1,5 +1,5 @@
 #!/bin/bash
-npm update --save
+npm update
 
 webdriver-manager update
 
