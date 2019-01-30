@@ -26,14 +26,14 @@
 	
 *To check if docker build is successful:*
 	
-	docker run -it --entrypoint "/bin/bash" bdd-ci:latest
+	docker run -it --entrypoint "/bin/bash" andresakai/docker-protractor:latest
 
 *How to use:*
 
 	Run this command inside your bdd project folder:
 	
-	$ docker run --rm -v $(pwd):/bdd gfgit/bdd-ci:<tag> protractor.conf.js <args>
-	
+	$ docker run --rm -v $(pwd):/bdd andresakai/docker-protractor:<tag> protractor.conf.js <args>
+	andresakai/docker-protractor
 	<tag> : check the tags to use the most appropriate
 
 	For args, you can use to override default values in protractor.conf.js:
