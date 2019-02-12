@@ -11,7 +11,7 @@
 
 	Run command to download image:
 	
-	docker pull gfgit/bdd-ci:<tag>
+	docker pull andresakai/docker-protractor:<tag>
 
 	check the latest tag (not the latest but a version number, ex.: 0.0.1)
 
