@@ -33,7 +33,7 @@
 	Run this command inside your bdd project folder:
 	
 	$ docker run --rm -v $(pwd):/bdd andresakai/docker-protractor:<tag> protractor.conf.js <args>
-	andresakai/docker-protractor
+	
 	<tag> : check the tags to use the most appropriate
 
 	For args, you can use to override default values in protractor.conf.js:
